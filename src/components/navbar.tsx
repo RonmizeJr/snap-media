@@ -8,22 +8,22 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="fixed z-10 w-full bg-background shadow-md">
+    <nav className="fixed z-10 w-full bg-background">
       <div className="container mx-auto flex items-center justify-between px-6 py-4">
         {/* Logo */}
         <Link href="/" className="text-2xl font-bold text-primary">
-          MediaOptimizer
+          SnapMedia
         </Link>
 
         {/* Desktop Menu */}
         <div className="hidden items-center space-x-6 md:flex">
-          <Link href="#features" className="text-foreground hover:text-primary">
+          <Link href="/features" className="text-foreground hover:text-primary">
             Features
           </Link>
-          <Link href="#pricing" className="text-foreground hover:text-primary">
+          <Link href="/pricing" className="text-foreground hover:text-primary">
             Pricing
           </Link>
-          <Link href="#contact" className="text-foreground hover:text-primary">
+          <Link href="/contact" className="text-foreground hover:text-primary">
             Contact
           </Link>
           <Link href="/docs" className="text-foreground hover:text-primary">
@@ -73,21 +73,21 @@ export default function Navbar() {
         <div className="border-t bg-white shadow-lg md:hidden">
           <div className="space-y-2 px-6 py-4">
             <Link
-              href="#features"
+              href="/features"
               className="block text-foreground hover:text-primary"
               onClick={() => setIsOpen(false)}
             >
               Features
             </Link>
             <Link
-              href="#pricing"
+              href="/pricing"
               className="block text-foreground hover:text-primary"
               onClick={() => setIsOpen(false)}
             >
               Pricing
             </Link>
             <Link
-              href="#contact"
+              href="/contact"
               className="block text-foreground hover:text-primary"
               onClick={() => setIsOpen(false)}
             >
@@ -102,7 +102,7 @@ export default function Navbar() {
             </Link>
             <Link
               href="/get-started"
-              className="block rounded-lg bg-blue-600 px-4 py-2 text-center font-semibold text-white hover:bg-blue-700"
+              className="block rounded-lg bg-primary px-4 py-2 text-center font-semibold text-foreground hover:bg-blue-700"
               onClick={() => setIsOpen(false)}
             >
               Get Started
