@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Button } from "./ui/button";
+import { UploadButton } from "~/utils/uploadthing";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,8 +12,8 @@ export default function Navbar() {
     <nav className="fixed z-10 w-full bg-background">
       <div className="container mx-auto flex items-center justify-between px-6 py-4">
         {/* Logo */}
-        <Link href="/" className="text-2xl font-bold text-primary">
-          SnapMedia
+        <Link href="/" className="text-2xl font-bold text-foreground">
+          Snap<span className="text-primary">Media</span>
         </Link>
 
         {/* Desktop Menu */}
@@ -35,6 +36,18 @@ export default function Navbar() {
           >
             Get Started
           </Link>
+          <UploadButton
+            endpoint="imageUploader"
+            onClientUploadComplete={(res) => {
+              // Do something with the response
+              console.log("Files: ", res);
+              alert("Upload Completed");
+            }}
+            onUploadError={(error: Error) => {
+              // Do something with the error.
+              alert(`ERROR! ${error.message}`);
+            }}
+          />
         </div>
 
         {/* Mobile Menu Button */}
